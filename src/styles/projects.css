@@ -1,0 +1,38 @@
+.projects-cont {
+    padding: 1% 4%;
+}
+
+.all-projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    gap: 20px;
+}
+
+.project-image-wrapper {
+    overflow: hidden;
+    height: 90%;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-image-wrapper:hover.project-image-wrapper > img {
+    transform: scale(1.2);
+}
+
+.project-image-wrapper > img{
+    height: 140%;
+    width: 140%;
+    transition: all .4s;
+}
+
+.project-card {
+    height: 250px;
+    margin-top: 1em;
+}
+
+.project-title {
+    font-size: 1.2rem;
+    margin: .4em 0;
+}

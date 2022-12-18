@@ -1,0 +1,13 @@
+.color {
+    color: var(--color-p);
+}
+
+.h1-big {
+    font-size: 2rem;
+    margin-bottom: .7em;
+}
+
+.h1-mid {
+    font-size: 1.5rem;
+    margin-bottom: .7em;
+}

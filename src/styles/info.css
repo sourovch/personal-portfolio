@@ -1,0 +1,42 @@
+.avatar-wrapper {
+    overflow: hidden;
+    min-height: 80px;
+    height: 150px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.avatar-wrapper > img {
+    height: 100%;
+}
+
+.info-text {
+    text-align: center;
+    color: white;
+}
+
+.big-text {
+    font-size: calc(1rem + .4vw);
+    margin: .2em;
+    font-weight: 900;
+}
+
+.small-text {
+    font-size: calc(.8rem + .2vw);
+    margin: .2em;
+}
+
+.contect-links {
+    font-size: 1.4rem;
+    display: flex;
+    gap: 10px;
+    margin: .5em 0;
+}
+
+.contect-links a {
+    color: white;
+}
