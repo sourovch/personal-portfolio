@@ -13,13 +13,16 @@ function Info({ children }) {
       </div>
       {children && children}
       <div className="contect-links">
-        <a href="https://www.facebook.com/sourov.hz/">
+        <a href="https://www.facebook.com/sourov.hz/" target="_blink">
           <i className="fa-brands fa-facebook-f"></i>
         </a>
-        <a href="https://www.linkedin.com/in/sourov-chowdhury-070514257/">
+        <a
+          href="https://www.linkedin.com/in/sourov-chowdhury-070514257/"
+          target="_blink"
+        >
           <i className="fa-brands fa-linkedin-in"></i>
         </a>
-        <a href="https://twitter.com/sourovch">
+        <a href="https://twitter.com/sourovch" target="_blink">
           <i className="fa-brands fa-twitter"></i>
         </a>
       </div>
@@ -28,7 +31,7 @@ function Info({ children }) {
         download="sourov chowdhury cv"
         className="btn p-btn cv-btn"
       >
-        download CV
+        Download CV
       </a>
     </>
   );

@@ -30,7 +30,7 @@ function Navbar({ collaps }) {
             <i className="fa-solid fa-user-graduate"></i>
           </NavLink>
           <NavLink to="/resume" className="text-nav">
-            resume
+            Resume
           </NavLink>
         </li>
         <li className="nav-item">
