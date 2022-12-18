@@ -78,6 +78,7 @@
   align-items: center;
   transition: translate .5s;
   display: none;
+  z-index: 11;
 }
 
 .nav-wrapper-res > * {
