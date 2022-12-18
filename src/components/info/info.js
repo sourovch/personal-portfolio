@@ -23,9 +23,13 @@ function Info({ children }) {
           <i className="fa-brands fa-twitter"></i>
         </a>
       </div>
-      <button type="button" className="btn p-btn cv-btn">
+      <a
+        href={process.env.PUBLIC_URL + 'sourov chowdhury cv.pdf'}
+        download="sourov chowdhury cv"
+        className="btn p-btn cv-btn"
+      >
         download CV
-      </button>
+      </a>
     </>
   );
 }
