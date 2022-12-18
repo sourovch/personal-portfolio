@@ -67,7 +67,7 @@
 .nav-wrapper-res {
   background-color: var(--color-p);
   min-height: 500px;
-  height: 100%;
+  height: 100vh;
   max-width: 350px;
   width: 100%;
   position: absolute;
