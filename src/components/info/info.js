@@ -13,13 +13,13 @@ function Info({ children }) {
       </div>
       {children && children}
       <div className="contect-links">
-        <a href="https://www.facebook.com">
+        <a href="https://www.facebook.com/sourov.hz/">
           <i className="fa-brands fa-facebook-f"></i>
         </a>
-        <a href="https://www.linkdin.com">
+        <a href="https://www.linkedin.com/in/sourov-chowdhury-070514257/">
           <i className="fa-brands fa-linkedin-in"></i>
         </a>
-        <a href="https://www.twitter.com">
+        <a href="https://twitter.com/sourovch">
           <i className="fa-brands fa-twitter"></i>
         </a>
       </div>
