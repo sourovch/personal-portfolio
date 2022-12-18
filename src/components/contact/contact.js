@@ -13,11 +13,15 @@ function Contact() {
           </div>
           <div className="call contact-info">
             <i className="fa-solid fa-phone"></i>
-            <p>+8801919171958</p>
+            <a href="tel:+8801919171958">
+              <p>+8801919171958</p>
+            </a>
           </div>
           <div className="mail contact-info">
             <i className="fa-regular fa-envelope"></i>
-            <p>sourovch@gmail.com</p>
+            <a href="mailto:sourovch@gmail.com">
+              <p>sourovch@gmail.com</p>
+            </a>
           </div>
           <div className="check contact-info">
             <i className="fa-regular fa-square-check"></i>
