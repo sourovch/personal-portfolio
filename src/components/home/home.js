@@ -8,7 +8,7 @@ function Home() {
     let index = 0;
 
     const animationEndHandler = () => {
-      index === workList.length ? (index = 0) : index++;
+      index === workList.length - 1 ? (index = 0) : index++;
 
       elm.innerHTML = `<div class='home-dynamic-text'>${workList[index]}</div>`;
     };
