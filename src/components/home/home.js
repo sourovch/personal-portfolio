@@ -5,28 +5,27 @@ function Home() {
   const dynTextRef = useRef();
 
   const changeText = (workList) => {
+    const { current: dynText } = dynTextRef;
     let index = 0;
-    let timeOut;
+
+    const animationEndHandler = () => {
+      index === workList.length ? (index = 0) : index++;
+
+      dynText.innerHTML = `<div class='home-dynamic-text'>${workList[index]}</div>`;
+    };
 
     const textChanger = () => {
-      const { current: dynText } = dynTextRef;
+      if (dynText) {
+        dynText.innerHTML = `<div class='home-dynamic-text'>${workList[index]}</div>`;
 
-      if (dynText)
-        dynText.innerHTML = `<div class="home-dynamic-text">${workList[index]}</div>`;
-
-      index++;
-      if (index >= workList.length) index = 0;
-
-      timeOut = setTimeout(() => {
-        textChanger();
-      }, 2990);
+        dynText?.addEventListener(
+          'animationend',
+          animationEndHandler
+        );
+      }
     };
 
     textChanger();
-
-    return {
-      timeOut,
-    };
   };
 
   useEffect(() => {
@@ -35,12 +34,7 @@ function Home() {
       'React Developer',
       'Web Designer',
     ];
-
-    const timeOut = changeText(workList);
-
-    return () => {
-      clearTimeout(timeOut);
-    };
+    changeText(workList);
   }, []);
 
   return (
