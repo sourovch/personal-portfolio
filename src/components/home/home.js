@@ -4,24 +4,20 @@ import '../../styles/home.css';
 function Home() {
   const dynTextRef = useRef();
 
-  const changeText = (workList) => {
-    const { current: dynText } = dynTextRef;
+  const changeText = (workList, elm) => {
     let index = 0;
 
     const animationEndHandler = () => {
       index === workList.length ? (index = 0) : index++;
 
-      dynText.innerHTML = `<div class='home-dynamic-text'>${workList[index]}</div>`;
+      elm.innerHTML = `<div class='home-dynamic-text'>${workList[index]}</div>`;
     };
 
     const textChanger = () => {
-      if (dynText) {
-        dynText.innerHTML = `<div class='home-dynamic-text'>${workList[index]}</div>`;
+      if (elm) {
+        elm.innerHTML = `<div class='home-dynamic-text'>${workList[index]}</div>`;
 
-        dynText?.addEventListener(
-          'animationend',
-          animationEndHandler
-        );
+        elm.addEventListener('animationend', animationEndHandler);
       }
     };
 
@@ -34,7 +30,7 @@ function Home() {
       'React Developer',
       'Web Designer',
     ];
-    changeText(workList);
+    changeText(workList, dynTextRef.current);
   }, []);
 
   return (
