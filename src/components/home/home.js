@@ -12,7 +12,6 @@ function Home() {
   const animationEndHandler = (e) => {
     index === workList.length - 1 ? (index = 0) : index++;
 
-    console.log(e.target);
     e.target.parentNode.innerHTML = `<div class='home-dynamic-text'>${workList[index]}</div>`;
   };
 
