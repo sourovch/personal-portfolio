@@ -17,7 +17,7 @@ function Info({ children }) {
           <i className="fa-brands fa-facebook-f"></i>
         </a>
         <a
-          href="https://www.linkedin.com/in/sourov-chowdhury-070514257/"
+          href="https://www.linkedin.com/in/sourov-ch/"
           target="_blink"
         >
           <i className="fa-brands fa-linkedin-in"></i>
