@@ -4,6 +4,7 @@ import './App.css';
 import Info from './components/info/info';
 import NavArrows from './components/navarrows';
 import Navbar from './components/navbar';
+import ProjectInfo from './components/project_info';
 
 function App() {
   const location = useLocation();
@@ -52,6 +53,7 @@ function App() {
 
   return (
     <div className="main-container page-fade">
+      <ProjectInfo />
       <div className="content-container">
         {windowWidth > 1020 && (
           <div className="info-wrapper">

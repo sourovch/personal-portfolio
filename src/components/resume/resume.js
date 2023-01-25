@@ -2,7 +2,13 @@ import '../../styles/resume.css';
 import Heading from '../heading';
 import InfoCard from './infoCard';
 import Progressbar from './progressbar';
-import nothing from '../../resorces/images/nothing.png';
+import Certificate from './certificate';
+
+// import nothing from '../../resorces/images/nothing.png';
+import cir1Banner from '../../resorces/images/cir_1.png';
+import cir2Banner from '../../resorces/images/cir_2.jpg';
+
+import cir1pdf from '../../resorces/images/cir_1.pdf';
 
 function Resume() {
   const educationInfo = [
@@ -11,7 +17,7 @@ function Resume() {
       year: '2012-2018',
       institute: 'Dutta High School',
       head: 'Secondary School Certificate',
-      disc: 'Passed SSC from Science department of Dutta High School with a GPA of 4.71',
+      disc: 'Passed SSC from Science department of Dutta High School with a GPA of 4.78',
     },
     {
       id: 2,
@@ -68,6 +74,27 @@ function Resume() {
     },
   ];
 
+  const certificates = [
+    {
+      id: 1,
+      img: cir1Banner,
+      label: 'Intro to computer science - Cs50',
+      disc: 'Certificate of Haverd univercity CS50x',
+      type: 'img',
+      file: cir1pdf,
+      alt: 'Intro to computer science - Cs50',
+    },
+    {
+      id: 2,
+      img: cir2Banner,
+      label: 'Reactjs - European IT Solutions',
+      disc: 'This certificate provided by european it institute as I completed Euit ReactJs course',
+      type: 'img',
+      file: cir2Banner,
+      alt: 'Reactjs - European IT Solutions',
+    },
+  ];
+
   return (
     <div className="page-fade resume-container">
       <h1 className="big-heading">Resume</h1>
@@ -111,18 +138,9 @@ function Resume() {
       </div>
       <h2>Certificates</h2>
       <div className="resume-all-certificates">
-        <div className="resume-certificate-card">
-          <div className="img-wrapper">
-            <img src={nothing} alt="nothing" />
-          </div>
-          <div className="resume-cir-text">Cirtificate 1</div>
-        </div>
-        <div className="resume-certificate-card">
-          <div className="img-wrapper">
-            <img src={nothing} alt="nothing" />
-          </div>
-          <div className="resume-cir-text">Cirtificate 2</div>
-        </div>
+        {certificates.map((info) => (
+          <Certificate info={info} key={info.id} />
+        ))}
       </div>
     </div>
   );

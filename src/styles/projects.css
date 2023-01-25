@@ -1,38 +1,58 @@
 .projects-cont {
-    padding: 1% 4%;
+  padding: 1% 4%;
 }
 
 .all-projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+  gap: 20px;
 }
 
 .project-image-wrapper {
-    overflow: hidden;
-    height: 90%;
-    background-color: gray;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  overflow: hidden;
+  height: 90%;
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .project-image-wrapper:hover.project-image-wrapper > img {
-    transform: scale(1.2);
+  transform: scale(1.1);
 }
 
-.project-image-wrapper > img{
-    height: 140%;
-    width: 140%;
-    transition: all .4s;
+.project-image-wrapper > img {
+  width: 100%;
+  height: 100%;
+  transition: all 0.4s;
+  object-fit: cover;
 }
 
 .project-card {
-    height: 250px;
-    margin-top: 1em;
+  height: 250px;
+  margin-top: 1em;
+  cursor: pointer;
 }
 
 .project-title {
-    font-size: 1.2rem;
-    margin: .4em 0;
+  font-size: 1.2rem;
+  margin: 0.4em 0;
+}
+
+.project-overlay {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  font-size: 4rem;
+  place-content: center;
+  position: absolute;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  z-index: 3;
+  transition: all 0.4s;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
 }

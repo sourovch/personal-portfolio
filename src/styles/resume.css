@@ -1,190 +1,191 @@
 .resume-container {
-    padding: 0 3%;
+  padding: 0 3%;
 }
 
 .resume-content-wrapper {
-    display: flex;
-    gap: 2%;
+  display: flex;
+  gap: 2%;
 }
 
 .resume-all-cards {
-    width: 60%;
+  width: 60%;
 }
 
 .resume-card-wrapper {
-    margin: 1.5em 0;
+  margin: 1.5em 0;
 }
 
 .resume-card-wrapper > h2 {
-    margin: 1em 0;
+  margin: 1em 0;
 }
 
 .resume-card {
-    position: relative;
-    display: table;
-    table-layout: fixed;
-    width: 100%;
-    padding-bottom: 15px;
+  position: relative;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  padding-bottom: 15px;
 }
 
 .resume-card-info {
-    width: 30%;
-    display: table-cell;
-    padding-right: 25px;
-    min-height: 100%;
-    text-align: right;
-    vertical-align: top;
+  width: 30%;
+  display: table-cell;
+  padding-right: 25px;
+  min-height: 100%;
+  text-align: right;
+  vertical-align: top;
 }
 
 .resume-card-disc {
-    width: 70%;
-    display: table-cell;
-    padding-left: 25px;
-    padding-right: 15px;
-    vertical-align: top;
+  width: 70%;
+  display: table-cell;
+  padding-left: 25px;
+  padding-right: 15px;
+  vertical-align: top;
 }
 
 .resume-year,
 .resume-disc-head {
-    font-weight: 700;
-    font-size: calc(.9rem + .1vw);
-    margin-bottom: .5em;
+  font-weight: 700;
+  font-size: calc(0.9rem + 0.1vw);
+  margin-bottom: 0.5em;
 }
 
 .resume-main-disc,
 .resume-institute {
-    font-size: calc(.7rem + .1vw);
-    color: gray;
+  font-size: calc(0.7rem + 0.1vw);
+  color: gray;
 }
 
 .resume-card-sep {
-    position: absolute;
-    top: 0;
-    left: 30%;
-    bottom: 0;
-    width: 1px;
-    background-color: #eee;
+  position: absolute;
+  top: 0;
+  left: 30%;
+  bottom: 0;
+  width: 1px;
+  background-color: #eee;
 }
 
 .resume-card-sep::before {
-    content: '';
-    display: block;
-    position: absolute;
-    margin-top: 4px;
-    width: 17px;
-    height: 17px;
-    margin-left: -8px;
-    border-radius: 10px;
-    background-color: #04b4e0;
-    opacity: .25;
-    z-index: 0;
+  content: '';
+  display: block;
+  position: absolute;
+  margin-top: 4px;
+  width: 17px;
+  height: 17px;
+  margin-left: -8px;
+  border-radius: 10px;
+  background-color: #04b4e0;
+  opacity: 0.25;
+  z-index: 0;
 }
 
 .resume-card-sep::after {
-    content: '';
-    display: block;
-    position: absolute;
-    margin-top: 7.3px;
-    width: 7px;
-    height: 7px;
-    margin-left: -4.5px;
-    background-color: #fff;
-    border-radius: 5px;
-    border: 2px solid #04b4e0;
-    z-index: 1;
+  content: '';
+  display: block;
+  position: absolute;
+  margin-top: 7.3px;
+  width: 7px;
+  height: 7px;
+  margin-left: -4.5px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 2px solid #04b4e0;
+  z-index: 1;
 }
 
 .resume-all-skills {
-    width: 38%;
+  width: 38%;
 }
 
 .progressbar-wrapper {
-    margin: .9em 0;
+  margin: 0.9em 0;
 }
 
 .resume-skill-wrapper:not(:first-child) {
-    margin-top: 3em;
+  margin-top: 3em;
 }
 
 .progressbar-wrapper > label {
-    display: block;
-    font-size: 1rem;
-    font-weight: 500;
-    margin: 4px 2px;
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 4px 2px;
 }
 
 .progressbar-wrapper > progress {
-    width: 100%;
-    background-color: transparent;
-    border: 0;
-    height: 7px;
-    border-radius: 3px;
-    border: 1px solid var(--color-p);
-    border-bottom: 1em;
-    display: block;
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  height: 7px;
+  border-radius: 3px;
+  border: 1px solid var(--color-p);
+  border-bottom: 1em;
+  display: block;
 }
 
 .progressbar-wrapper > progress::-moz-progress-bar {
-    background-color: var(--color-p);
-    border-radius: 4px;
+  background-color: var(--color-p);
+  border-radius: 4px;
 }
 
 .progressbar-wrapper > progress::-webkit-progress-bar {
-    background-color: transparent;
+  background-color: transparent;
 }
 
-.progressbar-wrapper >progress::-webkit-progress-value {
-    background-color: var(--color-p);
+.progressbar-wrapper > progress::-webkit-progress-value {
+  background-color: var(--color-p);
 }
 
 .resume-all-certificates {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, auto));
-    margin: 1em 0;
-    gap: 5px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, auto));
+  margin: 1em 0;
+  gap: 5px;
 }
 
 .resume-certificate-card {
-    display: flex;
-    border: 1px solid lightgray;
-    border-radius: 10px;
-    overflow: hidden;
+  display: flex;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .img-wrapper {
-    width: 30%;
-    overflow: hidden;
-    border-right: 1px solid lightgray;
+  width: 30%;
+  overflow: hidden;
+  border-right: 1px solid lightgray;
 }
 
 .img-wrapper > img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .resume-cir-text {
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-    font-weight: 700;
-    padding: 1.3em 1.7em;
-    height: 100px;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 1.3em 1.7em;
+  height: 100px;
 }
 
 @media only screen and (max-width: 750px) {
-    .resume-content-wrapper {
-        flex-direction: column;
-    }
+  .resume-content-wrapper {
+    flex-direction: column;
+  }
 
-    .resume-all-cards {
-        width: 100%;
-    }
+  .resume-all-cards {
+    width: 100%;
+  }
 
-    .resume-all-skills {
-        width: 60%;
-    }
+  .resume-all-skills {
+    width: 60%;
+  }
 
-    .resume-all-skills {
-        width: 100%;
-    }
+  .resume-all-skills {
+    width: 100%;
+  }
 }

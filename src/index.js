@@ -11,6 +11,7 @@ import About from './components/about/about';
 import Contact from './components/contact';
 import Resume from './components/resume';
 import Projects from './components/projects';
+import ProjectInfo from './contexts/project_info';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,8 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ProjectInfo>
+      <RouterProvider router={router} />
+    </ProjectInfo>
   </React.StrictMode>
 );

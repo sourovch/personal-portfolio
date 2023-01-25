@@ -1,39 +1,46 @@
 .home-container {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
 
 .home-main-text {
-    font-size: calc(2rem + 1vw);
-    margin: .2em;
+  font-size: calc(2rem + 1vw);
+  margin: 0.2em;
 }
 
 .home-sec-text {
-    font-size: calc(.9rem + .6vw);
-    color: gray;
+  font-size: calc(0.9rem + 0.6vw);
+  color: gray;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  cursor: default;
 }
 
-
 .home-dynamic-text {
-    animation-name: fadeInOut;
-    animation-duration: 3s;
-    animation-iteration-count: 1;
+  animation-name: fadeInOut;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
 }
 
 @keyframes fadeInOut {
-    0% {
-        opacity: 0;
-    }
-    
-    15%, 85% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    100% {
-        opacity: 0;
-    }
+  15%,
+  85% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
