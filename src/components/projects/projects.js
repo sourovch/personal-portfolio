@@ -74,7 +74,7 @@ function Projects() {
       img: proj6Banner,
       alt: 'Travel Logger',
       type: 'vid',
-      disc: 'This is A color genaretor app. that genarets random colors you can use in your projects',
+      disc: 'This is a logger app where you can store your memorys of good travels.',
       liveUrl: 'https://github.com/sourovch/Travel-logs',
       techs: ['ReactJs', 'ExpressJs', 'MongoDB'],
       embedId: 'UTp2U-N1ibA',
