@@ -1,7 +1,12 @@
+import { useForm, ValidationError } from "@formspree/react";
 import '../../styles/contact.css';
 import Heading from '../heading';
 
+const { REACT_APP_FORMSPREE } = process.env;
+
 function Contact() {
+  const [state, handleSubmit] = useForm(REACT_APP_FORMSPREE);
+
   return (
     <div className="page-fade contact-wrapper">
       <h1 className="big-heading">Contact</h1>
@@ -47,38 +52,50 @@ function Contact() {
             coloredText={'Help you'}
             size={'mid'}
           />
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="contact-form">
               <div className="contact-half-form">
                 <div className="contact-input-wrapper">
                   <input
                     type="text"
+                    name="name"
                     placeholder="Full Name"
                     className="fname"
+                    disabled={state.submitting || state.succeeded}
                   />
+                  <ValidationError prefix="Full Name" field="name" errors={state.errors} />
                 </div>
                 <div className="contact-input-wrapper">
                   <input
                     type="email"
+                    name="email"
                     placeholder="Email Address"
                     className="email"
+                    disabled={state.submitting || state.succeeded}
                   />
+                  <ValidationError prefix="Email" field="email" errors={state.errors} />
                 </div>
                 <div className="contact-input-wrapper">
                   <input
                     type="text"
+                    name="subject"
                     placeholder="Subject"
                     className="subject"
+                    disabled={state.submitting || state.succeeded}
                   />
+                  <ValidationError prefix="Subject" field="subject" errors={state.errors} />
                 </div>
               </div>
               <textarea
                 placeholder="Message"
+                name="message"
                 className="message contact-full-form"
+                disabled={state.submitting || state.succeeded}
               ></textarea>
+              <ValidationError prefix="Message" field="message" errors={state.errors} />
             </div>
             <div className="contact-submit">
-              <input type="submit" value={'Send Message'} />
+              <input type="submit" disabled={state.submitting || state.succeeded} value={state.submitting ? "Submitting" : (state.succeeded ? "Sent" :  'Send Message')} />
             </div>
           </form>
         </div>
