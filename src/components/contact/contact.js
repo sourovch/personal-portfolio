@@ -52,7 +52,10 @@ function Contact() {
             coloredText={'Help you'}
             size={'mid'}
           />
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={(e) => {
+            e.preventDefault();
+            handleSubmit();
+          }}>
             <div className="contact-form">
               <div className="contact-half-form">
                 <div className="contact-input-wrapper">
