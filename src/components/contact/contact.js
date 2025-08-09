@@ -7,6 +7,8 @@ const { REACT_APP_FORMSPREE } = process.env;
 function Contact() {
   const [state, handleSubmit] = useForm(REACT_APP_FORMSPREE);
 
+  console.log(REACT_APP_FORMSPREE);
+
   return (
     <div className="page-fade contact-wrapper">
       <h1 className="big-heading">Contact</h1>
