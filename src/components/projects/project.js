@@ -13,6 +13,7 @@ function Project({
     file,
     embedId,
     techs,
+    banner
   },
 }) {
   const [, , { openInfo }] = useProjInfo();
@@ -36,7 +37,7 @@ function Project({
     >
       <div className="project-image-wrapper">
         <Overlay type={type} />
-        <img src={img} alt={alt} />
+        <img src={banner || img} alt={alt} />
       </div>
       <h3 className="project-title">{title}</h3>
     </div>

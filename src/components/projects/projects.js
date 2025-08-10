@@ -1,28 +1,30 @@
-import Project from './project';
 import '../../styles/projects.css';
+import Project from './project';
 
 // import nothing from '../../resorces/images/nothing.png';
-import proj1Banner from '../../resorces/images/proj_1.jpg';
+import proj1Img from '../../resorces/images/proj_1.jpg';
+import proj1Banner from '../../resorces/images/proj_1_b.jpg';
 import proj2Banner from '../../resorces/images/proj_2.png';
 import proj3Banner from '../../resorces/images/proj_3.jpg';
 import proj4Banner from '../../resorces/images/proj_4.jpg';
 import proj5Banner from '../../resorces/images/proj_5.jpg';
 import proj6Banner from '../../resorces/images/proj_6.jpg';
 
+import { useRef, useState } from 'react';
 import proj1Pdf from '../../resorces/images/proj_1.pdf';
 
-function Projects() {
-  const projectInfo = [
+const projectInfo = [
     {
       id: 1,
       title: 'Education For All',
-      img: proj1Banner,
+      img: proj1Img,
+      banner: proj1Banner,
       alt: 'Education For All',
       type: 'pdf',
-      disc: 'This Website made with only HTML & CSS & some simple Js no libraries included. This is A Education Website can be used for some school. This is one of my erly day projects.',
+      disc: 'This Website made with only HTML & CSS & some simple Js no libraries included. This is A Education Website can be used for some school. This is one of my early day projects.',
       liveUrl:
         'https://github.com/sourovch/small-projects/tree/master/educationWebsite2',
-      techs: ['html', 'css', 'Js'],
+      techs: ['HTML', 'CSS', 'Js'],
       file: proj1Pdf,
     },
     {
@@ -44,18 +46,18 @@ function Projects() {
       type: 'img',
       disc: 'This is a simple messaging app made with only ReactJs. You can message from both(sender & reciver) end.',
       liveUrl: 'https://github.com/sourovch/Messages',
-      techs: ['ReactJs', 'Css'],
+      techs: ['ReactJs', 'CSS'],
     },
     {
       id: 4,
-      title: 'Color Genaretor',
+      title: 'Color Generator',
       img: proj4Banner,
-      alt: 'Color Genaretor',
+      alt: 'Color Generator',
       type: 'vid',
-      disc: 'This is A color genaretor app. that genarets random colors you can use in your projects',
+      disc: 'This is A color generator app. that generates random colors you can use in your projects',
       liveUrl:
         'https://github.com/sourovch/Reactjs/tree/main/color-geraretor',
-      techs: ['ReactJs', 'Css'],
+      techs: ['ReactJs', 'CSS'],
       embedId: '8y254J6i4nU',
     },
     {
@@ -66,7 +68,7 @@ function Projects() {
       type: 'img',
       disc: 'This is A CRUD made with ReactJs(no backend)',
       liveUrl: 'https://github.com/sourovch/Reactjs/tree/main/crud',
-      techs: ['ReactJs', 'Css'],
+      techs: ['ReactJs', 'CSS'],
     },
     {
       id: 6,
@@ -74,20 +76,78 @@ function Projects() {
       img: proj6Banner,
       alt: 'Travel Logger',
       type: 'vid',
-      disc: 'This is a logger app where you can store your memorys of good travels.',
+      disc: 'This is a logger app where you can store your memory of good travels.',
       liveUrl: 'https://github.com/sourovch/Travel-logs',
       techs: ['ReactJs', 'ExpressJs', 'MongoDB'],
       embedId: 'UTp2U-N1ibA',
     },
   ];
 
+  const categoriesSet = new Set();
+  projectInfo.forEach(el => {
+    el.techs.forEach(techs => {
+      categoriesSet.add(techs)
+    })
+  })
+
+function haveSameValues(arr1, arr2) {
+  if (arr1?.length !== arr2?.length) return false;
+
+  const ids1 = arr1.map(obj => obj.id).sort();
+  const ids2 = arr2.map(obj => obj.id).sort();
+
+  return ids1.every((id, index) => id === ids2[index]);
+}
+
+const categories = Array.from(categoriesSet);
+
+let selectedCateV = "all";
+let prevFilteredProjInfo = null;
+
+function Projects() {
+  const [selectedCate, setSelectedCate] = useState("all");
+  /** @type {React.MutableRefObject<HTMLDivElement> || null} */
+  const projRef = useRef(null);
+
+  const filteredProjectInfo = projectInfo.filter((info) => selectedCate === 'all' ? true : info.techs.includes(selectedCate));
+
+  const cateClickHandler = (cate) => {
+      return () => { 
+        if(cate === selectedCate) return;
+
+        if(!haveSameValues(projectInfo.filter((info) => cate === 'all' ? true : info.techs.includes(cate)), prevFilteredProjInfo)){
+          projRef.current.classList.add("fade");
+        } else {
+          prevFilteredProjInfo = filteredProjectInfo;
+          setSelectedCate(() => selectedCateV)
+        }
+        selectedCateV = cate;
+      }
+  }
+
+  const transitionEndHandler = (e) => {
+        prevFilteredProjInfo = filteredProjectInfo;
+        if(!e.currentTarget.classList.contains("fade")) 
+            return;
+        e.currentTarget.classList.remove("fade");
+        prevFilteredProjInfo = filteredProjectInfo;
+        setSelectedCate(() => {
+          return selectedCateV;
+        });
+  } 
+  
   return (
     <div className="page-fade projects-cont">
       <h1 className="big-heading">Portfolio</h1>
-      <div className="all-projects">
-        {projectInfo.map((info) => (
-          <Project info={info} key={info.id} />
-        ))}
+      <div className="category-list">
+        <button className={`category ${selectedCate === "all" && "active"}`} onClick={cateClickHandler("all")}>All</button>
+        {categories.map(e => <button key={e} className={`category ${e === selectedCate && "active"}`} onClick={cateClickHandler(e)}>{e}</button>)}
+      </div>
+      <div className="all-projects" ref={projRef} onTransitionEnd={transitionEndHandler}>
+        {filteredProjectInfo
+          .map((info) => (
+            <Project info={info} key={info.id} />
+          ))}
       </div>
     </div>
   );

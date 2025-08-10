@@ -1,8 +1,8 @@
 import '../../styles/resume.css';
 import Heading from '../heading';
+import Certificate from './certificate';
 import InfoCard from './infoCard';
 import Progressbar from './progressbar';
-import Certificate from './certificate';
 
 // import nothing from '../../resorces/images/nothing.png';
 import cir1Banner from '../../resorces/images/cir_1.png';
@@ -21,20 +21,27 @@ function Resume() {
     },
     {
       id: 2,
-      year: '2018-present',
-      institute: 'Kishoreganj Polytecnic Institute',
-      head: 'Deploma in Computer Engineering',
-      disc: 'I am currently studing at Computer department of Kishoreganj Polytecnic Institute And learning about Core of Computer Science.',
+      year: '2018-2022',
+      institute: 'Kishoreganj Polytechnic Institute',
+      head: 'Diploma in Computer Engineering',
+      disc: 'I studied at Computer department of Kishoreganj Polytecnic Institute And learning about Core of Computer Science.',
     },
+    {
+      id: 3,
+      year: '2024-present',
+      institute: 'Noida International University',
+      head: 'Computer Science & Engineering',
+      disc: 'I am currently pursuing graduation at Computer Science and Engineering in Noida International University.',
+    }
   ];
 
   const experienceInfo = [
     {
       id: 1,
-      year: 'present',
+      year: 'Jan 2023 - Mar 2023',
       institute: 'European It Solution',
-      head: 'ReactJs Developer',
-      disc: 'Doing industrial attachment as a ReactJs developer.',
+      head: 'ReactJs Inturn',
+      disc: 'completed 3 months of internship at European It Solutions.',
     },
   ];
 
@@ -42,36 +49,36 @@ function Resume() {
     {
       id: 1,
       label: 'web design',
-      value: 70,
+      value: 80,
     },
   ];
 
   const codingSkillsInfo = [
     {
       id: 1,
-      label: 'javascript',
-      value: 60,
+      label: 'Javascript',
+      value: 90,
     },
     {
       id: 2,
       label: 'ReactJs',
-      value: 40,
+      value: 90,
     },
     {
       id: 3,
-      label: 'ExpressJs',
-      value: 70,
+      label: "NextJs",
+      value: 80
     },
     {
       id: 4,
-      label: 'Mongoose',
-      value: 60,
+      label: 'HTML/CSS',
+      value: 95,
     },
     {
       id: 5,
-      label: 'HTML/CSS',
+      label: 'Tailwind',
       value: 80,
-    },
+    }
   ];
 
   const certificates = [
@@ -102,13 +109,13 @@ function Resume() {
         <div className="resume-all-cards">
           <div className="resume-card-wrapper">
             <h2>Education</h2>
-            {educationInfo.map((info) => (
+            {educationInfo?.map((info) => (
               <InfoCard data={info} key={info.id} />
             ))}
           </div>
           <div className="resume-card-wrapper">
             <h2>Experience</h2>
-            {experienceInfo.map((info) => (
+            {experienceInfo?.map((info) => (
               <InfoCard data={info} key={info.id} />
             ))}
           </div>
@@ -120,7 +127,7 @@ function Resume() {
               coloredText={'Skills'}
               size={'mid'}
             />
-            {designSkillsInfo.map((info) => (
+            {designSkillsInfo?.map((info) => (
               <Progressbar info={info} key={info.id} />
             ))}
           </div>
@@ -130,7 +137,7 @@ function Resume() {
               coloredText={'Skills'}
               size={'mid'}
             />
-            {codingSkillsInfo.map((info) => (
+            {codingSkillsInfo?.map((info) => (
               <Progressbar info={info} key={info.id} />
             ))}
           </div>
@@ -138,7 +145,7 @@ function Resume() {
       </div>
       <h2>Certificates</h2>
       <div className="resume-all-certificates">
-        {certificates.map((info) => (
+        {certificates?.map((info) => (
           <Certificate info={info} key={info.id} />
         ))}
       </div>

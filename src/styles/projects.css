@@ -1,11 +1,14 @@
 .projects-cont {
   padding: 1% 4%;
+  transition: all .5s ease-out;
 }
 
 .all-projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, auto));
   gap: 20px;
+  opacity: 1;
+  transition: opacity .3s ease-out, transform .3s ease-out;
 }
 
 .project-image-wrapper {
@@ -32,6 +35,7 @@
   height: 250px;
   margin-top: 1em;
   cursor: pointer;
+  max-width: 300px;
 }
 
 .project-title {
@@ -55,4 +59,36 @@
 
 .project-card:hover .project-overlay {
   opacity: 1;
+}
+
+.category-list {
+  display: flex;
+  margin: 2rem 0 .8rem 0;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.category {
+  --cat-color: gray;
+  padding: .3rem 1rem;
+  background-color: transparent;
+  font-size: .7rem;
+  color: var(--cat-color);
+  border: .1rem solid var(--cat-color);
+  border-radius: .4rem;
+  transition: color .5s linear, transform .2s ease-out;
+  cursor: pointer;
+}
+
+.category:hover, .category.active {
+  --cat-color: var(--color-p);
+}
+
+.category.active {
+  transform: scale(1.1);
+}
+
+.all-projects.fade {
+  opacity: 0;
+  transform: translateY(50px);
 }
